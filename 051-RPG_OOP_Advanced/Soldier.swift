@@ -13,12 +13,13 @@ class Soldier: Character {
     let IMMUNE_MAX = 10
     
     override var attackPwr: Int {
-        return Int(arc4random_uniform(20) + 10)
+        lastAttack = Int(arc4random_uniform(20) + 10)
+        return lastAttack
     }
     
-    override func attacked(attackPwr: Int) -> Bool {
+    override func isAttacked(attackPwr: Int) -> Bool {
         if (attackPwr > IMMUNE_MAX) {
-            return super.attacked(attackPwr)
+            return super.isAttacked(attackPwr)
         } else {
             return false
         }

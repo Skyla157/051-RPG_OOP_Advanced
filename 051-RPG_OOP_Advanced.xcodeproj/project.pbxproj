@@ -15,6 +15,11 @@
 		A50240931CBC83CD00841F57 /* Character.swift in Sources */ = {isa = PBXBuildFile; fileRef = A50240921CBC83CD00841F57 /* Character.swift */; };
 		A50240951CBC862300841F57 /* Soldier.swift in Sources */ = {isa = PBXBuildFile; fileRef = A50240941CBC862300841F57 /* Soldier.swift */; };
 		A50240971CBC87AC00841F57 /* Orc.swift in Sources */ = {isa = PBXBuildFile; fileRef = A50240961CBC87AC00841F57 /* Orc.swift */; };
+		A55A57381CBCA04700E5AA3A /* battle.wav in Resources */ = {isa = PBXBuildFile; fileRef = A55A57331CBCA04700E5AA3A /* battle.wav */; };
+		A55A57391CBCA04700E5AA3A /* miss.wav in Resources */ = {isa = PBXBuildFile; fileRef = A55A57341CBCA04700E5AA3A /* miss.wav */; };
+		A55A573C1CBCA04700E5AA3A /* sword.wav in Resources */ = {isa = PBXBuildFile; fileRef = A55A57371CBCA04700E5AA3A /* sword.wav */; };
+		A55A57401CBCB4AD00E5AA3A /* player1death.wav in Resources */ = {isa = PBXBuildFile; fileRef = A55A573E1CBCB4AD00E5AA3A /* player1death.wav */; };
+		A55A57411CBCB4AD00E5AA3A /* player2death.wav in Resources */ = {isa = PBXBuildFile; fileRef = A55A573F1CBCB4AD00E5AA3A /* player2death.wav */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -28,6 +33,11 @@
 		A50240921CBC83CD00841F57 /* Character.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Character.swift; sourceTree = "<group>"; };
 		A50240941CBC862300841F57 /* Soldier.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Soldier.swift; sourceTree = "<group>"; };
 		A50240961CBC87AC00841F57 /* Orc.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Orc.swift; sourceTree = "<group>"; };
+		A55A57331CBCA04700E5AA3A /* battle.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = battle.wav; sourceTree = "<group>"; };
+		A55A57341CBCA04700E5AA3A /* miss.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = miss.wav; sourceTree = "<group>"; };
+		A55A57371CBCA04700E5AA3A /* sword.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = sword.wav; sourceTree = "<group>"; };
+		A55A573E1CBCB4AD00E5AA3A /* player1death.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = player1death.wav; sourceTree = "<group>"; };
+		A55A573F1CBCB4AD00E5AA3A /* player2death.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = player2death.wav; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -60,6 +70,7 @@
 		A502407F1CBC7EDC00841F57 /* 051-RPG_OOP_Advanced */ = {
 			isa = PBXGroup;
 			children = (
+				A55A573D1CBCA05200E5AA3A /* Music */,
 				A50240801CBC7EDC00841F57 /* AppDelegate.swift */,
 				A50240821CBC7EDC00841F57 /* ViewController.swift */,
 				A50240921CBC83CD00841F57 /* Character.swift */,
@@ -71,6 +82,18 @@
 				A502408C1CBC7EDC00841F57 /* Info.plist */,
 			);
 			path = "051-RPG_OOP_Advanced";
+			sourceTree = "<group>";
+		};
+		A55A573D1CBCA05200E5AA3A /* Music */ = {
+			isa = PBXGroup;
+			children = (
+				A55A573E1CBCB4AD00E5AA3A /* player1death.wav */,
+				A55A573F1CBCB4AD00E5AA3A /* player2death.wav */,
+				A55A57331CBCA04700E5AA3A /* battle.wav */,
+				A55A57341CBCA04700E5AA3A /* miss.wav */,
+				A55A57371CBCA04700E5AA3A /* sword.wav */,
+			);
+			name = Music;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -131,8 +154,13 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				A55A57391CBCA04700E5AA3A /* miss.wav in Resources */,
+				A55A57411CBCB4AD00E5AA3A /* player2death.wav in Resources */,
 				A502408B1CBC7EDC00841F57 /* LaunchScreen.storyboard in Resources */,
+				A55A57401CBCB4AD00E5AA3A /* player1death.wav in Resources */,
+				A55A573C1CBCA04700E5AA3A /* sword.wav in Resources */,
 				A50240881CBC7EDC00841F57 /* Assets.xcassets in Resources */,
+				A55A57381CBCA04700E5AA3A /* battle.wav in Resources */,
 				A50240861CBC7EDC00841F57 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -296,6 +324,7 @@
 				A50240911CBC7EDC00841F57 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};

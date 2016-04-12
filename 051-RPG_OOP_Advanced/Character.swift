@@ -14,6 +14,8 @@ class Character {
     private var _hp: Int!
     private var _attackPwr: Int!
     
+    var lastAttack: Int = 0
+    
     var hp: Int {
         get {
             return _hp
@@ -48,8 +50,10 @@ class Character {
         self._attackPwr = attack
     }
     
-    func attacked(attackPwr: Int) -> Bool {
+    func isAttacked(attackPwr: Int) -> Bool {
+        print("\(self.name) had \(self.hp) HP")
         self._hp = self._hp - attackPwr
+        print("\(self.name) now has \(self.hp) HP")
         return true
     }
     
