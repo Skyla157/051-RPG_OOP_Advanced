@@ -22,25 +22,31 @@ class ViewController: UIViewController {
     var playerTwo = Soldier!()
     
     override func viewDidLoad() {
-        super.viewDidLoad()        
+        super.viewDidLoad()
         setUpNewGame()
     }
 
 
     @IBAction func onPlayer1Attack(sender: AnyObject) {
-        playerTwo.attacked(playerOne.attackPwr)
-        isPlayerAlive(playerOne, defender: playerTwo)
-        btnPlayer2Attack.enabled = false
-        NSTimer.scheduledTimerWithTimeInterval(3.0, target: self, selector: "enablePlayer2AttackBtn", userInfo: nil, repeats: false)
+        if playerTwo.attacked(playerOne.attackPwr) {
+            isPlayerAlive(playerOne, defender: playerTwo)
+            btnPlayer2Attack.enabled = false
+            NSTimer.scheduledTimerWithTimeInterval(3.0, target: self, selector: "enablePlayer2AttackBtn", userInfo: nil, repeats: false)
+        } else {
+            failedAttack(playerTwo)
+        }
     }
     
     @IBAction func onPlayer2Attack(sender: AnyObject) {
-        playerOne.attacked(playerTwo.attackPwr)
-        isPlayerAlive(playerTwo, defender: playerOne)
-        btnPlayer1Attack.enabled = false
-        NSTimer.scheduledTimerWithTimeInterval(3.0, target: self, selector: "enablePlayer1AttackBtn", userInfo: nil, repeats: false)
+        if playerOne.attacked(playerTwo.attackPwr) {
+            isPlayerAlive(playerTwo, defender: playerOne)
+            btnPlayer1Attack.enabled = false
+            NSTimer.scheduledTimerWithTimeInterval(3.0, target: self, selector: "enablePlayer1AttackBtn", userInfo: nil, repeats: false)
+        } else {
+            failedAttack(playerOne)
+        }
     }
-    
+
     @IBAction func onRestartTap(sender: AnyObject) {
         setUpNewGame()
     }
@@ -53,10 +59,14 @@ class ViewController: UIViewController {
             lblGameText.text = ("\(attacker.name) has won!")
             setRestartBtn(false)
         }
-        
+    }
+    
+    func failedAttack(defender: Character){
+        lblGameText.text = ("\(defender.name) dodges the attack!!")
     }
     
     func setUpNewGame() {
+        
         playerOne = Orc(name: "Grug", hp: 100, attack: 15)
         playerTwo = Soldier(name: "Caesar", hp: 150, attack: 10)
         setRestartBtn(true)

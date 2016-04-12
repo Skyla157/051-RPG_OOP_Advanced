@@ -10,7 +10,11 @@ import Foundation
 
 class Orc: Character {
     
-    let IMMUNE_MAX = 5
+    let IMMUNE_MAX = 15
+    
+    override var attackPwr: Int {
+        return Int(arc4random_uniform(20) + 5)
+    }
     
     override func attacked(attackPwr: Int) -> Bool {
         if (attackPwr > IMMUNE_MAX) {
